@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="300">
+<title>Haleem · status</title><style>
+body{font:15px/1.5 system-ui,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;color:#1d1d1f;background:#fafafa}
+@media(prefers-color-scheme:dark){body{color:#e8e8e8;background:#141414}.bar{background:#333!important}}
+h1{margin-bottom:0}h2{margin-top:2rem;font-size:1.1rem}table{width:100%;border-collapse:collapse}
+td,th{text-align:left;padding:.5rem .4rem;vertical-align:top}th{font-weight:600;font-size:.85rem;opacity:.7}
+.bar{height:8px;background:#e5e5e5;border-radius:4px;overflow:hidden;min-width:120px}.bar div{height:100%}
+.lo{background:#2e9e5b}.mid{background:#d9a21b}.hi{background:#d64545}small{opacity:.7}.err{color:#d64545}
+ul{padding-left:1.2rem}li{margin:.3rem 0}</style></head><body>
+<h1>Status</h1><small>Updated Sun 01 Nov, 02:30 (Pakistan Standard Time) · refreshes every 15 minutes</small>
+<h2>Claude usage</h2><table><tr><th>Account</th><th>5-hour window</th><th>7-day window</th></tr><tr><td>Account 2 (DLE)</td><td><div class="bar"><div class="lo" style="width:1%"></div></div><small>1% used · resets <b class="cd" data-t="2026-11-01T01:10:00.477442+00:00"></b> <span class="lt" data-t="2026-11-01T01:10:00.477442+00:00">(Sun 01 Nov, 06:10)</span></small></td><td><div class="bar"><div class="mid" style="width:78%"></div></div><small>78% used · resets <b class="cd" data-t="2026-11-02T02:00:00.477462+00:00"></b> <span class="lt" data-t="2026-11-02T02:00:00.477462+00:00">(Mon 02 Nov, 07:00)</span></small></td></tr><tr><td>Account 3 (tiktok)</td><td><div class="bar"><div class="lo" style="width:11%"></div></div><small>11% used · resets <b class="cd" data-t="2026-11-01T00:49:59.959385+00:00"></b> <span class="lt" data-t="2026-11-01T00:49:59.959385+00:00">(Sun 01 Nov, 05:49)</span></small></td><td><div class="bar"><div class="lo" style="width:25%"></div></div><small>25% used · resets <b class="cd" data-t="2026-11-06T20:59:59.959404+00:00"></b> <span class="lt" data-t="2026-11-06T20:59:59.959404+00:00">(Sat 07 Nov, 01:59)</span></small></td></tr><tr><td>Account 1 (haleem)</td><td><div class="bar"><div class="lo" style="width:0%"></div></div><small>0% used · resets <b class="cd" data-t=""></b> <span class="lt" data-t="">(-)</span></small></td><td><div class="bar"><div class="hi" style="width:100%"></div></div><small>100% used · resets <b class="cd" data-t="2026-11-03T11:00:00.449998+00:00"></b> <span class="lt" data-t="2026-11-03T11:00:00.449998+00:00">(Tue 03 Nov, 16:00)</span></small></td></tr></table>
+<h2>Working on now <small>(last 24 h)</small></h2><ul><li><small>Nothing in the last day</small></li></ul>
+<h2>All projects</h2><ul><li><b>dawloom-site</b> <small>2 chats · last active Wed 14 Oct, 13:19</small></li><li><b>dle bot</b> <small>1 chats · last active Wed 14 Oct, 12:46</small></li><li><b>pos-tauri</b> <small>5 chats · last active Wed 14 Oct, 12:36</small></li><li><b>dle</b> <small>5 chats · last active Tue 13 Oct, 19:58</small></li><li><b>ludo3d</b> <small>14 chats · last active Tue 13 Oct, 13:54</small></li><li><b>pos-global-platform</b> <small>9 chats · last active Mon 12 Oct, 21:47</small></li><li><b>dawloom-hosting</b> <small>3 chats · last active Mon 12 Oct, 13:14</small></li><li><b>fcp-platform</b> <small>15 chats · last active Mon 12 Oct, 13:04</small></li><li><b>xmp</b> <small>6 chats · last active Sat 10 Oct, 21:18</small></li><li><b>sop-dawloom</b> <small>2 chats · last active Fri 09 Oct, 19:56</small></li><li><b>POS-Web</b> <small>1 chats · last active Fri 02 Oct, 12:26</small></li><li><b>mrcaliappraisals</b> <small>1 chats · last active Tue 29 Sep, 18:40</small></li></ul>
+<script>
+// Live countdown to each reset, and the reset time in the viewer's own time zone.
+const fmt = new Intl.DateTimeFormat(undefined, {weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"});
+function tick() {
+  for (const el of document.querySelectorAll(".cd[data-t]")) {
+    const ms = new Date(el.dataset.t) - Date.now();
+    if (!el.dataset.t) continue;
+    if (ms <= 0) { el.textContent = "now (waiting for next update)"; continue; }
+    const m = Math.floor(ms / 60000), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60);
+    el.textContent = "in " + (d ? d + "d " + h + "h" : h ? h + "h " + m % 60 + "m" : m % 60 + "m");
+  }
+}
+for (const el of document.querySelectorAll(".lt[data-t]")) if (el.dataset.t) el.textContent = "(" + fmt.format(new Date(el.dataset.t)) + ", your time)";
+tick(); setInterval(tick, 30000);
+</script>
+</body></html>
